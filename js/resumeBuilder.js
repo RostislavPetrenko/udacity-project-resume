@@ -11,7 +11,24 @@ const bio = {
     welcomeMessage: 'Howdy',
     skills: ['HTML', 'CSS', 'JavaScript'],
     biopic: '../images/fry.jpg',
-    display: function () {},
+    display: function () {
+        $('#header').prepend(HTMLheaderRole.replace('%data%', bio.role));
+        $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
+        $('#header').append(HTMLbioPic.replace('%data%', bio.biopic));
+        $('#header').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
+
+        $('#topContacts, #footerContacts').append(HTMLmobile.replace('%data%', bio.contacts.mobile));
+        $('#topContacts, #footerContacts').append(HTMLemail.replace('%data%', bio.contacts.email));
+        $('#topContacts, #footerContacts').append(HTMLgithub.replace('%data%', bio.contacts.github));
+        $('#topContacts, #footerContacts').append(HTMLtwitter.replace('%data%', bio.contacts.twitter));
+        $('#topContacts, #footerContacts').append(HTMLlocation.replace('%data%', bio.contacts.location));
+
+
+        if (bio.skills) {
+            $('#header').append(HTMLskillsStart);
+            $('#skills').append(bio.skills.map(skill => HTMLskills.replace('%data%', skill)));
+        }
+    },
 };
 
 const education = {
@@ -88,3 +105,5 @@ const projects = {
     ],
     display: function () {},
 };
+
+bio.display();
