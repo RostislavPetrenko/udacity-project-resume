@@ -85,7 +85,21 @@ const work = {
             description: 'Gummies tootsie roll candy canes donut. Tart tiramisu pie apple pie. Biscuit pie candy cotton candy sweet sugar plum bear claw. Fruitcake candy dessert marshmallow gummi bears.'
         },
     ],
-    display: function () {},
+    display: function () {
+        for (var job in work.jobs) {
+            var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
+            var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
+            var formattedDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
+            var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[job].description);
+            var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
+
+            $('#workExperience').append(HTMLworkStart);
+            $('.work-entry:last').append(formattedEmployer + formattedTitle);
+            $('.work-entry:last').append(formattedLocation);
+            $('.work-entry:last').append(formattedDates);
+            $('.work-entry:last').append(formattedDescription);
+        }
+    },
 };
 
 const projects = {
@@ -107,3 +121,4 @@ const projects = {
 };
 
 bio.display();
+work.display();
