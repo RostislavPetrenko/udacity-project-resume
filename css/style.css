@@ -1,3 +1,13 @@
+:root {
+    --primary-color: #f5a623;
+    --accent-color: #1199c3;
+    --offwhite: #f3f3f3;
+    --light-gray: #999999;
+    --slate: #4a4a4a;
+    --dark-gray: #333333;
+    --black: #000000;
+}
+
 body,
 div,
 ul,
@@ -26,7 +36,7 @@ h6 {
 
 h1 {
     font-size: 40px;
-    color: #f5a623;
+    color: var(--primary-color);
     line-height: 48px;
     display: inline;
 }
@@ -34,7 +44,7 @@ h1 {
 h2 {
     font-weight: bold;
     font-size: 24px;
-    color: #999999;
+    color: var(--light-gray);
     line-height: 29px;
     padding: 10px;
 }
@@ -42,14 +52,14 @@ h2 {
 h3 {
     font-style: italic;
     font-size: 20px;
-    color: #000000;
+    color: var(--black);
     line-height: 22px;
 }
 
 h4 {
     font-weight: bold;
     font-size: 14px;
-    color: #4a4a4a;
+    color: var(--slate);
     line-height: 17px;
 }
 
@@ -65,7 +75,7 @@ h5 {
 .date-text {
     font-style: italic;
     font-size: 14px;
-    color: #999999;
+    color: var(--light-gray);
     line-height: 16px;
     float: left;
 }
@@ -73,7 +83,7 @@ h5 {
 .location-text {
     font-style: italic;
     font-size: 14px;
-    color: #999999;
+    color: var(--light-gray);
     line-height: 16px;
     float: right;
 
@@ -81,12 +91,12 @@ h5 {
 
 p {
     font-size: 14px;
-    color: #333333;
+    color: var(--dark-gray);
     line-height: 21px;
 }
 
 a {
-    color: #1199c3;
+    color: var(--accent-color);
     text-decoration: none;
     margin-top: 10px;
     display: block;
@@ -95,21 +105,21 @@ a {
 .welcome-message {
     font-style: italic;
     font-size: 18px;
-    color: #f3f3f3;
+    color: var(--offwhite);
     line-height: 28px;
 }
 
 #skills-h3 {
-    color: #f5ae23;
+    color: var(--primary-color);
     display: none;
 }
 
 .orange {
-    background-color: #f5ae23;
+    background-color: var(--primary-color);
 }
 
 .orange-text {
-    color: #f5ae23;
+    color: var(--primary-color);
 }
 
 .white-text {
@@ -118,18 +128,18 @@ a {
 }
 
 .gray {
-    background-color: #f3f3f3;
+    background-color: var(--offwhite);
     padding-bottom: 10px;
     clear: both;
 }
 
 .dark-gray {
-    background-color: #4a4a4a;
+    background-color: var(--slate);
 }
 
 /* TODO: Replace with image later */
 #header {
-    background-color: #484848;
+    background-color: var(--slate);
 }
 
 .flex-box {
