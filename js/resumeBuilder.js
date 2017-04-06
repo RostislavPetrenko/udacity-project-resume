@@ -58,7 +58,32 @@ const education = {
             url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
         }
     ],
-    display: function () {},
+    display: function () {
+        education.schools.forEach(function(school) {
+            var formattedEdu = HTMLschoolName.replace('%data%', school.name) + HTMLschoolDegree.replace('%data%', school.degree);
+            var formattedLocation = HTMLschoolLocation.replace('%data%', school.location);
+            var formattedDate = HTMLschoolDates.replace('%data%', school.dates);
+            var formattedMajors = HTMLschoolMajor.replace('%data%', school.majors.join(', '));
+
+            $('#education').append(HTMLschoolStart);
+            $('.education-entry:last').append(formattedEdu);
+            $('.education-entry:last').append(formattedLocation);
+            $('.education-entry:last').append(formattedDate);
+            $('.education-entry:last').append(formattedMajors);
+        });
+
+        $('#education').append(HTMLonlineClasses);
+        education.onlineCourses.forEach(function(onlineSchool) {
+            var formattedOnline = HTMLonlineTitle.replace('%data%', onlineSchool.title) + HTMLonlineSchool.replace('%data%', onlineSchool.school);
+            var onlineDate = HTMLonlineDates.replace('%data%', onlineSchool.dates);
+            var onlineUrl = HTMLonlineURL.replace('%data%', onlineSchool.url);
+
+            $('#education').append(HTMLschoolStart);
+            $('.education-entry:last').append(formattedOnline);
+            $('.education-entry:last').append(onlineDate);
+            $('.education-entry:last').append(onlineUrl);
+        });
+    },
 };
 
 const work = {
@@ -143,3 +168,4 @@ const projects = {
 bio.display();
 work.display();
 projects.display();
+education.display();
